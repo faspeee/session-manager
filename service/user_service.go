@@ -17,3 +17,7 @@ func Login(info request.LoginInfo) (string, error) {
 func CheckToken(token string) bool {
 	return true
 }
+
+func Registry(user request.User) (bool, error) {
+
+}

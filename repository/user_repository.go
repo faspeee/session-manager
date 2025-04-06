@@ -4,6 +4,7 @@ import (
 	"context"
 	"go.mongodb.org/mongo-driver/bson"
 	"session-manager/configuration"
+	"session-manager/model/collection"
 )
 
 func GetUserByNameAndPassword(username string, password string) (bson.M, error) {
@@ -15,4 +16,7 @@ func GetUserByNameAndPassword(username string, password string) (bson.M, error) 
 		return nil, err
 	}
 	return user, err
+}
+func RegistryUser(user collection.User) {
+
 }

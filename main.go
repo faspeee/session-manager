@@ -13,6 +13,7 @@ func setupRouter() *gin.Engine {
 	// Disable Console Color
 	// gin.DisableConsoleColor()
 	route := gin.Default()
+	route.POST("/session/register", controller.Register)
 	route.POST("/session/login", controller.Login)
 	route.POST("/session/checkToken", controller.CheckToken)
 	// Authorized group (uses gin.BasicAuth() middleware)

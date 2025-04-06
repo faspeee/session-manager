@@ -30,3 +30,15 @@ func CheckToken(context *gin.Context) {
 		context.JSON(http.StatusOK, false)
 	}
 }
+
+func Register(context *gin.Context) {
+	jsonData, _ := io.ReadAll(context.Request.Body)
+	var userInfo request.User
+	// Use json.Unmarshal to parse the JSON into the struct.
+	err := json.Unmarshal(jsonData, &userInfo)
+	if err != nil {
+		log.Fatal(err)
+	}
+	registryResponse, err := service.Registry(userInfo)
+	context.JSON(http.StatusOK, registryResponse)
+}
