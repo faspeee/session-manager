@@ -8,7 +8,7 @@ type Country struct {
 	City          string `json:"city"`
 }
 
-type User struct {
+type UserRequest struct {
 	Username string    `json:"username"`
 	Password string    `json:"password"`
 	Birthday time.Time `json:"birthday"` // Consider using time.Time

@@ -33,7 +33,7 @@ func CheckToken(context *gin.Context) {
 
 func Register(context *gin.Context) {
 	jsonData, _ := io.ReadAll(context.Request.Body)
-	var userInfo request.User
+	var userInfo request.UserRequest
 	// Use json.Unmarshal to parse the JSON into the struct.
 	err := json.Unmarshal(jsonData, &userInfo)
 	if err != nil {

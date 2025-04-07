@@ -8,15 +8,20 @@ import (
 )
 
 func GetUserByNameAndPassword(username string, password string) (bson.M, error) {
-
 	var user bson.M
-	err := configuration.MongoClient.Database("local").Collection("user").FindOne(context.TODO(),
+	err := configuration.GetCollectionByDb("user", "local").FindOne(context.TODO(),
 		bson.D{{"username", "test"}}).Decode(&user)
 	if err != nil {
 		return nil, err
 	}
 	return user, err
 }
-func RegistryUser(user collection.User) {
-
+func RegistryUser(user collection.User) error {
+	_, err := configuration.GetCollectionByDb("user", "local").InsertOne(context.TODO(),
+		user)
+	if err != nil {
+		return err
+	} else {
+		return nil
+	}
 }
