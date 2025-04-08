@@ -8,7 +8,7 @@ import (
 )
 
 // Your MongoDB Atlas Connection String
-const uri = "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000"
+const uri = "mongodb://host.docker.internal:27017/?directConnection=true&serverSelectionTimeoutMS=3000"
 
 // A global variable that will hold a reference to the MongoDB client
 var MongoClient *mongo.Client
