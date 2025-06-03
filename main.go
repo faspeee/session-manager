@@ -56,7 +56,8 @@ func setupRouter() *gin.Engine {
 }
 
 func main() {
-	configuration.Init()
+	configuration.CreateAndCloseTestContainerMongo()
+	//configuration.Init()
 	route := setupRouter()
 	// Listen and Server in 0.0.0.0:8080
 	err := route.Run(":8282")

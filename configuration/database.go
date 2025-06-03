@@ -7,7 +7,7 @@ import (
 	"log"
 )
 
-// Your MongoDB Atlas Connection String
+// Your MongoDB Atlas Connection String TODO: change to env var
 const uri = "mongodb://host.docker.internal:27017/?directConnection=true&serverSelectionTimeoutMS=3000"
 
 // A global variable that will hold a reference to the MongoDB client
